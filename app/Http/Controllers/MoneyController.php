@@ -12,6 +12,10 @@ class MoneyController extends Controller
             return view ('money', compact('data'));
         }
 
+        public function page(){
+            return view('layouts.index');
+        }
+
         public function form(){
             $data = money::all();
 

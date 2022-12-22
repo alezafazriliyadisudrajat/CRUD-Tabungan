@@ -14,11 +14,10 @@ use App\Http\Controllers\MoneyController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/money');
-});
+
 
 Route::get('/money',[MoneyController::class,'index'])->name('money');
+Route::get('/',[MoneyController::class,'page'])->name('page');
 Route::get('/form',[MoneyController::class,'form'])->name('form');
 Route::post('/insertdata',[MoneyController::class,'insertdata'])->name('insert');
 Route::get('/tampildata/{id}',[MoneyController::class,'tampildata'])->name('tampildata');
@@ -26,6 +25,4 @@ Route::post('/updatedata/{id}',[MoneyController::class,'updatedata'])->name('upd
 Route::post('/hapusdata/{id}',[MoneyController::class,'hapusdata'])->name('hapusdata');
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
